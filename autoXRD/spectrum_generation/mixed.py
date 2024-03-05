@@ -327,9 +327,9 @@ class MixedGen(object):
         return form_signal
 
 
-def main(struc, num_specs, max_shift, max_strain, min_domain_size, max_domain_size, max_texture, impur_amt, min_angle=10.0, max_angle=80.0):
+def main(struc, num_specs, max_shift, max_strain, min_domain_size, max_domain_size, max_texture, impur_amt, min_angle=10.0, max_angle=80.0, ref_dir='References'):
 
-    mixed_generator = MixedGen(struc, max_shift, max_strain, min_domain_size, max_domain_size,  max_texture, impur_amt, min_angle, max_angle)
+    mixed_generator = MixedGen(struc, max_shift, max_strain, min_domain_size, max_domain_size,  max_texture, impur_amt, min_angle, max_angle,ref_dir=ref_dir)
 
     mixed_patterns = [mixed_generator.mixed_spectrum for i in range(num_specs)]
 
