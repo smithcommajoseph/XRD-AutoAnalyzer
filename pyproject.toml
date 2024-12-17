@@ -1,29 +1,25 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "autoXRD"
 version = "0.0.4"
 description = "A package for automated XRD analysis"
-authors = [
-    {name = "Nathan J. Szymanski", email = "nathan_szymanski@berkeley.edu"},
-]
-dependencies = [
-    "numpy",
-    "pymatgen",
-    "scipy",
-    "scikit-image",
-    "tensorflow>=2.16",
-    "pyxtal",
-    "pyts",
-    "tqdm",
-    "asteval",
-    "numexpr>=2.8.3",
-]
+authors = ["Nathan J. Szymanski"]
 
-[tool.setuptools.packages.find]
-where = ["."]
+[tool.poetry.dependencies]
+python = ">=3.10, <=3.12"
+numpy = "*"
+pymatgen = "*"
+scipy = "*"
+scikit-image = "*"
+tensorflow = ">=2.16"
+pyxtal = "*"
+pyts = "*"
+tqdm = "*"
+asteval = "*"
+numexpr = ">=2.8.3"
 
-[project.urls]
-Homepage = "https://github.com/njszym/XRD-AutoAnalyzer"
+[tool.poetry.dev-dependencies]
+pytest = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
